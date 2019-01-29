@@ -4,3 +4,41 @@ devtools:
 
 datasource:
   url: jdbc:h2:mem:testdb
+
+
+url:
+  facebook: https://graph.facebook.com
+  google: https://accounts.google.com
+  kakao: https://kauth.kakao.com
+
+
+facebook :
+  client :
+    clientId : 227152371560648
+    clientSecret: c72f2f254ed07a47ba583097fec60d66
+    accessTokenUri: ${url.facebook}/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth?display=popup
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    scope: email
+  resource:
+    userInfoUri: ${url.facebook}/me?fields=id,name,email,link
+
+google :
+  client :
+    clientId : 105088266385-4ro8vaq6jnej1b48bq5nturkcshek7t1.apps.googleusercontent.com
+    clientSecret: Cha401NJRkpJHzj6lUxxyehV
+    accessTokenUri: ${url.google}/o/oauth2/token
+    userAuthorizationUri: ${url.google}/o/oauth2/auth
+    scope: email, profile
+  resource:
+    userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
+
+kakao :
+  client :
+    clientId : 278ee9f9f5ece0718afe98d11aa399fc
+    accessTokenUri: ${url.kakao}/oauth/token
+    userAuthorizationUri: ${url.kakao}/oauth/authorize
+  resource:
+    userInfoUri: https://kapi.kakao.com/v1/user/me
