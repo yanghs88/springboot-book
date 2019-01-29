@@ -22,8 +22,6 @@ repositories {
     mavenCentral()
 }
 
-ext['json-path.version'] = '2.2.1'
-
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
